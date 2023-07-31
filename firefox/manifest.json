@@ -1,0 +1,18 @@
+{
+    "description": "kuru",
+    "manifest_version": 2,
+    "name": "kuru",
+    "version": "1.0",
+    "icons": {
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.youtube.com/*"
+            ],
+            "js": [
+                "kuru.js"
+            ]
+        }
+    ]
+}
