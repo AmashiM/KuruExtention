@@ -3,7 +3,21 @@ console.log("kuru");
 let kuru_image = new Image();
 
 const ThumbnailSearchQuery = "ytd-thumbnail:not(.ytd-video-preview, .ytd-rich-grid-slim-media) a > yt-image > img.yt-core-image:only-child:not(.yt-core-attributed-string__image-element),.ytp-videowall-still-image:not([style*='extension:'])";
-const SourceUrl = "https://herta.eu.org/img/hertaa1.webp";
+// const SourceUrl = "https://herta.eu.org/img/hertaa1.webp";
+let extension_id;
+
+try {
+    extension_id = chrome.runtime.id;
+} catch(err){
+    console.error(err);
+}
+
+if(extension_id == null){
+    console.error("failed to get extension id");
+}
+
+let SourceUrl = `chrome-extension://${extension_id}/assets/superior.gif`
+
 
 function applyThumbnail(thumbnailElement){
     if(thumbnailElement.hasAttribute("data-kuru-loaded")){
