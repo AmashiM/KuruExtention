@@ -3,14 +3,7 @@ console.log("kuru");
 let kuru_image = new Image();
 
 const ThumbnailSearchQuery = "ytd-thumbnail:not(.ytd-video-preview, .ytd-rich-grid-slim-media) a > yt-image > img.yt-core-image:only-child:not(.yt-core-attributed-string__image-element),.ytp-videowall-still-image:not([style*='extension:'])";
-let SourceUrl = null;
-
-try {
-    SourceUrl = browser.runtime.getUrl("./superior.gif");
-} catch(err){
-    console.error(err);
-    SourceUrl = "https://github.com/AmashiM/KuruExtention/tree/main/chrome/assets/superior.gif";
-}
+let SourceUrl = "https://github.com/AmashiM/KuruExtention/tree/main/chrome/assets/superior.gif";
 
 
 function applyThumbnail(thumbnailElement){
